@@ -16,6 +16,7 @@ def meilleurscore(record):
     f = open('Meilleur_Score.txt', 'w')
     f.write("Date: {}\n".format(t))
     f.write("Meilleur score: {}".format(record))
+    f.close()
     return
 
 
@@ -33,6 +34,7 @@ def historiquedeparties(nom):
     f.write("Historique de parties:\n")
     f.write(historique)
     f.write("\n")
+    f.close()
     return
 
 
@@ -227,6 +229,7 @@ def meilleur_record():
     try:
         f = open('Meilleur_Score.txt', 'r')
         contenu = f.read()
+        f.close()
         return int(contenu.split(" ")[-1])
     except:
         return 0
